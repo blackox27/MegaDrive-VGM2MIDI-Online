@@ -1,0 +1,55 @@
+{
+  "environment": "Node; sinais sintéticos; sem captura de áudio de navegador",
+  "total": 12,
+  "passed": 12,
+  "results": [
+    {
+      "name": "Sinal baixo de 440 Hz ocupa a altura do monitor",
+      "status": "PASS"
+    },
+    {
+      "name": "Nota grave de 55 Hz mostra dois ciclos completos",
+      "status": "PASS"
+    },
+    {
+      "name": "Taxa de 48 kHz preserva a janela temporal",
+      "status": "PASS"
+    },
+    {
+      "name": "Escala do gráfico não altera os samples originais",
+      "status": "PASS"
+    },
+    {
+      "name": "Silêncio permanece plano mesmo depois de uma nota forte",
+      "status": "PASS"
+    },
+    {
+      "name": "Nenhum áudio conectado permanece plano",
+      "status": "PASS"
+    },
+    {
+      "name": "Offset DC constante permanece plano",
+      "status": "PASS"
+    },
+    {
+      "name": "Offset DC em um sinal é removido apenas da visualização",
+      "status": "PASS"
+    },
+    {
+      "name": "Aumento de amplitude não satura o desenho",
+      "status": "PASS"
+    },
+    {
+      "name": "Medidor conserva RMS baixo sem usar o ganho visual",
+      "status": "PASS"
+    },
+    {
+      "name": "Samples não finitos não contaminam as coordenadas",
+      "status": "PASS"
+    },
+    {
+      "name": "Entrada curta e afinação extrema não saem do buffer",
+      "status": "PASS"
+    }
+  ]
+}

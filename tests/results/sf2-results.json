@@ -1,0 +1,50 @@
+{
+  "total": 11,
+  "passed": 11,
+  "results": [
+    {
+      "name": "SF2 real: 206 presets, 584 samples e 1639 regiões",
+      "status": "PASS"
+    },
+    {
+      "name": "Todos os presets têm regiões dentro dos samples e ranges MIDI",
+      "status": "PASS"
+    },
+    {
+      "name": "Seleção automática/manual preserva os bancos reais",
+      "status": "PASS"
+    },
+    {
+      "name": "AudioBuffer é gerado a partir do PCM16 real da SF2",
+      "status": "PASS"
+    },
+    {
+      "name": "Velocidade e tecla escolhem zonas reais",
+      "status": "PASS"
+    },
+    {
+      "name": "Nota SF2 usa BufferSource, afinação, envelope e controles finitos",
+      "status": "PASS"
+    },
+    {
+      "name": "Loops SF2 têm intervalos válidos e seek fica dentro deles",
+      "status": "PASS"
+    },
+    {
+      "name": "Cache pode ser limitado e samples não ficam duplicados sem limite",
+      "status": "PASS"
+    },
+    {
+      "name": "SF2 truncada, assinatura e chunks gigantes são rejeitados",
+      "status": "PASS"
+    },
+    {
+      "name": "Índices de bags corrompidos retornam erro controlado",
+      "status": "PASS"
+    },
+    {
+      "name": "Offsets de envelope no preset somam ao padrão do instrumento",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+<span class="overline">VGM2MID Mega Drive Studio 3.2</span>
+<h1>Abra, escolha os timbres e toque.</h1>
+<ol>
+  <li>
+    Abra o HTML em um navegador moderno. Não requer instalação, servidor ou
+    conexão com a internet.
+  </li>
+  <li>
+    Use o seletor no cabeçalho para escolher Português (BR) ou English. A
+    preferência é lembrada quando o armazenamento do navegador está disponível.
+    Trocar o idioma preserva a fila, os ajustes, a posição e a soundfont
+    carregada.
+  </li>
+  <li>
+    Use <b>Adicionar músicas</b> ou o quadro de músicas para VGM, VGZ, VGM
+    comprimido em GZIP ou GYM. Use <b>Carregar SF2</b> ou o quadro Soundfont
+    separado para uma .sf2. O pacote inclui a fonte enviada na pasta
+    assets/soundfonts.
+  </li>
+  <li>
+    Experimente as demos PSG, DAC e SegaPCM. Escolha instrumento, preset SF2,
+    volume e transposição por pista. Os botões acima da tabela ativam ou
+    desativam todas as pistas.
+  </li>
+  <li>
+    Reproduza, pause, pare ou busque uma posição. A tecla Espaço reproduz/pausa
+    quando o foco está fora dos campos. Os osciloscópios mostram o áudio real da
+    prévia, com ganho visual automático e indicador de nível RMS. Desativar
+    Animações reduz os destaques de notas; o monitoramento de ondas continua.
+  </li>
+  <li>
+    Revise trechos PCM/DAC: ouça, baixe o WAV reconstruído, ignore ou atribua
+    uma nota/percussão manual. O monitor funciona também quando o trecho está
+    excluído do MIDI.
+  </li>
+  <li>
+    Baixe MIDI ou o lote ZIP com diagnósticos. O MIDI inclui notas, controles e
+    bancos/programas escolhidos, mas não incorpora a soundfont ou samples PCM.
+    Para usar esses timbres em outro aplicativo, carregue a mesma SF2.
+  </li>
+</ol>
+<h2>Entradas e chips compatíveis</h2>
+<p>
+  Cabeçalhos VGM 1.00–1.72, VGZ/GZIP, metadados GD3 e loops por comandos são
+  suportados. GYM aceita PSG/YM2612 a 50/60 Hz; GYMX com compressão interna
+  precisa ser descompactado e seus loops de cabeçalho não são expandidos.
+</p>
+<p>
+  A transcrição por registros inclui SN76489, AY8910, YM2612, YM2151, YM2413,
+  YM2203, YM2608, YM2610, YM3812, YM3526, Y8950, YMF262, Game Boy, NES APU,
+  HuC6280, SAA1099 e SCC/K051649. Dados de ROM/canais SegaPCM e streams DAC
+  YM2612 compatíveis podem ser reconstruídos para transcrição PCM aproximada.
+  Reconhecer um comando não significa emular todos os recursos do chip.
+</p>
+<h2>PCM e precisão musical</h2>
+<p>
+  VGM contém comandos de chips, e não a partitura original. A análise PCM estima
+  notas monofônicas ou percussão a partir do áudio reconstruído. Acordes,
+  instrumentos misturados, fala, ruído, fundamentais fracas e ataques sem
+  silêncio podem gerar erros de notas, oitavas e limites de trechos.
+  Periodicidade é uma medida de análise, não uma probabilidade calibrada de
+  acerto. Revise os resultados. A saída WAV recuperada é mono a 22.050 Hz.
+</p>
+<h2>Soundfonts</h2>
+<p>
+  O sampler aceita samples SF2 PCM16, zonas por tecla/velocidade,
+  bancos/programas, afinação, pan, loops e envelopes de volume. Alguns presets
+  têm extensão de teclado limitada. Filtros, LFOs, moduladores, classes
+  exclusivas e efeitos avançados não são implementados integralmente. SF3/Ogg
+  não é suportado; fontes de 24 bits usam sua componente de 16 bits. Nomes
+  originais dos samples e presets são preservados em ambos os idiomas.
+</p>
+<h2>Opções e limites</h2>
+<p>
+  BPM altera a grade MIDI preservando o tempo em segundos; não é um controle de
+  velocidade da prévia. Transposição é medida em semitons. Passagens de loop
+  afetam a reconversão. Pitch bend preserva alterações explícitas de afinação;
+  notas discretas podem fragmentar vibratos. Mais de 15 pistas melódicas ou
+  várias pistas de percussão usam portas MIDI adicionais, que precisam ser
+  respeitadas pelo editor de destino.
+</p>
+<p>
+  Limites: 20 músicas e 256 MB de entrada por lote, 64 MB por música, 128 MB
+  descompactados, 30 minutos e 8 passagens. PCM: 16 milhões de capturas, 4
+  milhões de passos de stream, 64 MB contabilizados de áudio recuperado e 2.048
+  trechos. ROM SegaPCM: 64 MB por chip. SF2: 256 MB de entrada e 64 MB de cache
+  de AudioBuffers. Prévia: até 256 vozes de sample/oscilador e 16 camadas SF2
+  por nota. Monitores exibem 12 pistas por página e PCM exibe 20 trechos por
+  página.
+</p>
+<p>
+  RF5C68/164, PWM, OPL4, QSound e outros chips/ADPCM não suportados continuam
+  fora da transcrição. MP3, WAV, MIDI, NSF, SPC e ROMs avulsas não podem ser
+  importados como músicas. Silêncio e arquivos apenas com chips não suportados
+  não geram um MIDI vazio.
+</p>
+<h2>Código-fonte</h2>
+<p>
+  src/core contém conversão; src/audio contém reprodução, SF2 e processamento de
+  ondas; src/ui contém a interface; src/io contém importação/exportação;
+  src/i18n contém os dois catálogos e a troca de idioma; src/styles contém CSS;
+  src/workers contém o protocolo de conversão. docs contém ajuda e análise
+  bilíngues; scripts contém as ferramentas de construção/empacotamento; tests
+  contém verificações e fixtures; assets/soundfonts contém a SF2 enviada.
+  Reconstrua com python3 scripts/build.py. O uso do aplicativo não requer
+  dependências.
+</p>
+<h2>Créditos</h2>
+<p>
+  VGM2MID original: Paul Jensen, com atualizações de Valley Bell. Esta edição
+  web é independente. A soundfont Mega 16-Bit FM SF2 enviada foi preservada sem
+  alterações.
+</p>

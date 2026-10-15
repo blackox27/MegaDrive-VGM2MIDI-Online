@@ -1,0 +1,141 @@
+<span class="overline">Revisão 3.2 · 15 de outubro de 2026</span>
+<h1>Revisão de código e internacionalização</h1>
+<p>
+  A revisão mantém a conversão VGM/GYM e a reprodução SF2 da edição 3.1,
+  acrescenta seleção PT-BR/EN e organiza os fontes por responsabilidade. O HTML
+  final continua independente e abre por arquivo local. A soundfont fornecida
+  permanece sem alterações.
+</p>
+<h2>Idiomas</h2>
+<p>
+  Os catálogos locais traduzem legendas, opções GM, controles, mensagens de
+  conversão/erro, atributos de acessibilidade e diagnósticos. Ajuda e análise
+  têm documentos próprios em português e inglês. O atributo lang do HTML
+  acompanha a seleção. A preferência usa armazenamento local com tratamento de
+  falhas; se o navegador negar acesso, a troca funciona durante a sessão. Não há
+  serviço de tradução nem requisições de rede. Nomes de arquivos, metadados e
+  nomes próprios da SF2 são preservados.
+</p>
+<h2>Correções</h2>
+<p>
+  O quadro de músicas deixa de sugerir SF2; arquivos de tipos diferentes
+  permanecem separados. A troca de página PCM encerra sua audição para evitar
+  monitor removido enquanto o áudio continua. O monitor mantém notas sobrepostas
+  separadamente, evitando apagar teclas de uma nota longa quando outra curta
+  termina. A legenda do instrumento reflete o motor de áudio escolhido. A
+  reprodução não inicia durante conversão ou carregamento de fonte. Diagnósticos
+  identificam a prévia realmente selecionada.
+</p>
+<p>
+  O sampler limpa vozes já iniciadas caso uma camada posterior falhe e respeita
+  as vagas restantes do limite de reprodução. A interface oferece
+  ativar/desativar todas as pistas e atalho de Espaço fora dos campos. A troca
+  de idioma não recria os controles nem altera ajustes, fila ou reprodução.
+</p>
+<h2>Otimização</h2>
+<p>
+  Buffers de leitura e do traço dos osciloscópios são reutilizados entre
+  quadros. A renderização continua em até aproximadamente 30 fps e desenha
+  apenas a página de monitores visível. O Blob do conversor é reutilizado entre
+  arquivos e liberado ao encerrar a página. Os ArrayBuffers PCM são transferidos
+  do Worker para a interface, evitando sua cópia adicional; a entrada original
+  permanece disponível para reconversão. Traduções usam cache limitado e
+  atualizações incrementais de nós.
+</p>
+<h2>Organização</h2>
+<p>
+  src separa core, audio, ui, io, i18n, workers, styles e inicialização. scripts
+  contém construção e pacote; docs contém documentação bilíngue; tests contém
+  casos e resultados; assets/soundfonts contém a fonte enviada. A construção usa
+  somente Python padrão e combina os módulos em uma função isolada, sem expor o
+  estado da aplicação globalmente. Os motores reutilizáveis mantêm exportação
+  para testes em Node.
+</p>
+<h2>Validação e limites</h2>
+<p>
+  Consulte Validacao.json e tests/results para os resultados por caso. Os testes
+  incluem o parser, PCM, chips, soundfont real enviada, operações da interface,
+  troca de idioma, manutenção de estado, erros, formas de onda e limpeza de
+  áudio. Os VGMs de teste são sintéticos. A interface foi verificada em jsdom
+  com Canvas/Web Audio simulados e Workers de Node. Não houve validação
+  visual/sonora em navegador real nesta revisão; os resultados não garantem
+  ausência de todos os bugs nem precisão musical sobre um catálogo de jogos.
+</p>
+<p>
+  O suporte a chips não foi ampliado nesta revisão. A transcrição PCM continua
+  monofônica ou por disparos de percussão; misturas e polifonia podem gerar
+  erros. Recursos SF2 avançados continuam parciais e SF3/Ogg não é aceito. MIDI
+  não incorpora samples. Essas limitações e as cotas de recursos estão descritas
+  na ajuda.
+</p>
+<h2>Pesquisa e referências técnicas</h2>
+<p>
+  Foram consultadas as referências primárias abaixo para conferir idioma do
+  documento, armazenamento opcional, filtros de arquivos, transferência de
+  buffers, domínio do tempo do analisador e estrutura SF2/VGM. As otimizações
+  descritas são decisões desta implementação; não constituem benchmark de
+  desempenho em dispositivos reais.
+</p>
+<ul>
+  <li>
+    <a
+      href="https://www.w3.org/International/questions/qa-html-language-declarations.html"
+      target="_blank"
+      rel="noopener"
+      >W3C — Declaring language in HTML</a
+    >: uso de lang no elemento html e identificação dos idiomas.
+  </li>
+  <li>
+    <a
+      href="https://html.spec.whatwg.org/multipage/webstorage.html"
+      target="_blank"
+      rel="noopener"
+      >WHATWG — Web storage</a
+    >: acesso ao armazenamento pode falhar; preferência tratada como opcional.
+  </li>
+  <li>
+    <a
+      href="https://html.spec.whatwg.org/multipage/input.html#file-upload-state-(type=file)"
+      target="_blank"
+      rel="noopener"
+      >WHATWG — File upload</a
+    >: accept é uma indicação ao seletor; o aplicativo também valida o arquivo.
+  </li>
+  <li>
+    <a
+      href="https://html.spec.whatwg.org/multipage/workers.html"
+      target="_blank"
+      rel="noopener"
+      >WHATWG — Web Workers</a
+    >: transferência de ArrayBuffers para reduzir cópias.
+  </li>
+  <li>
+    <a
+      href="https://www.w3.org/TR/webaudio-1.0/#AnalyserNode"
+      target="_blank"
+      rel="noopener"
+      >W3C — Web Audio API</a
+    >: AnalyserNode, buffers do domínio do tempo e agendamento por currentTime.
+  </li>
+  <li>
+    <a
+      href="https://www.synthfont.com/sfspec24.pdf"
+      target="_blank"
+      rel="noopener"
+      >E-mu/Creative — SoundFont 2.04</a
+    >: tabelas, zonas, geradores, samples e limites do sampler.
+  </li>
+  <li>
+    <a
+      href="https://github.com/vgmrips/vgmplay-legacy/blob/master/VGMPlay/vgmspec171.txt"
+      target="_blank"
+      rel="noopener"
+      >VGM Specification 1.71</a
+    >: referência de cabeçalhos, comandos e dados PCM.
+  </li>
+</ul>
+<p>
+  Créditos originais: Paul Jensen e Valley Bell. Esta implementação web é
+  independente. A fonte enviada é Mega 16-Bit FM SF2; seus metadados e presets
+  permanecem no catálogo do pacote.
+</p>

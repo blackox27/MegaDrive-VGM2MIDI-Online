@@ -1,0 +1,59 @@
+{
+  "environment": "Node and jsdom; simulated Canvas/Web Audio; no real browser",
+  "total": 13,
+  "passed": 13,
+  "results": [
+    {
+      "name": "Osciloscópio reutiliza o mesmo array de desenho e o zera no silêncio",
+      "status": "PASS"
+    },
+    {
+      "name": "Janela do scope valida contagens inválidas sem NaN/divisão por zero",
+      "status": "PASS"
+    },
+    {
+      "name": "Falha em uma camada SF2 posterior limpa vozes já iniciadas",
+      "status": "PASS"
+    },
+    {
+      "name": "Orçamento de camadas SF2 respeita as vagas restantes",
+      "status": "PASS"
+    },
+    {
+      "name": "Notas sobrepostas mantêm a tecla da nota longa depois do fim da curta",
+      "status": "PASS"
+    },
+    {
+      "name": "Navegar pela página de trechos PCM encerra a audição e limpa o monitor",
+      "status": "PASS"
+    },
+    {
+      "name": "Carregamento de soundfont bloqueia início de reprodução até terminar",
+      "status": "PASS"
+    },
+    {
+      "name": "Reutilização do Worker preserva entrada para reconversão e PCM transferido",
+      "status": "PASS"
+    },
+    {
+      "name": "Lote misto converte músicas e mantém visível o aviso dos arquivos rejeitados",
+      "status": "PASS"
+    },
+    {
+      "name": "Prévia com todas as pistas desativadas avisa e não cria transporte vazio",
+      "status": "PASS"
+    },
+    {
+      "name": "Array curto do scope e taxa inválida não leem fora da janela",
+      "status": "PASS"
+    },
+    {
+      "name": "Página libera o Blob do Worker ao ser encerrada",
+      "status": "PASS"
+    },
+    {
+      "name": "Regressões novas não deixam erros JavaScript pendentes",
+      "status": "PASS"
+    }
+  ]
+}

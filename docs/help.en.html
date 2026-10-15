@@ -1,0 +1,109 @@
+<span class="overline">VGM2MID Mega Drive Studio 3.2</span>
+<h1>Open, choose sounds and play.</h1>
+<ol>
+  <li>
+    Open the HTML file in a modern browser. No installation, server or internet
+    connection is required.
+  </li>
+  <li>
+    Use the language selector in the header to choose Português (BR) or English.
+    The choice is remembered when browser storage is available. Switching
+    language preserves the queue, track settings, playback position and loaded
+    soundfont.
+  </li>
+  <li>
+    Use <b>Add music</b> or the music drop area for VGM, VGZ, GZIP-compressed
+    VGM or GYM files. Use <b>Load SF2</b> or the separate Soundfont area for one
+    .sf2 file. The complete package includes the supplied Mega 16-Bit FM
+    soundfont in assets/soundfonts.
+  </li>
+  <li>
+    Try the PSG, DAC and SegaPCM demos. Select an instrument, SF2 preset, volume
+    and transposition per track. Enable all or disable all tracks with the
+    buttons above the table.
+  </li>
+  <li>
+    Play, pause, stop or seek. Space plays/pauses when focus is outside input
+    controls. Oscilloscopes show the actual preview audio with automatic visual
+    gain and an RMS level indicator. Disable animations to reduce note
+    highlights; waveform monitoring remains active.
+  </li>
+  <li>
+    Review recovered PCM/DAC regions. Listen to a region, download its
+    reconstructed WAV, ignore it or manually assign a MIDI note/percussion key.
+    The region monitor also works when a region is excluded from MIDI.
+  </li>
+  <li>
+    Download MIDI or the batch ZIP with diagnostics. MIDI includes notes,
+    controls and selected banks/programs, but does not embed the soundfont or
+    PCM samples. Load the same SF2 in another synthesizer to use those sounds.
+  </li>
+</ol>
+<h2>Supported input and chips</h2>
+<p>
+  VGM headers 1.00–1.72, VGZ/GZIP, GD3 metadata and command loops are supported.
+  GYM supports PSG/YM2612 at a selected 50/60 Hz; internally compressed GYMX
+  must first be decompressed, and GYMX header loops are not expanded.
+</p>
+<p>
+  Register-based transcription includes SN76489, AY8910, YM2612, YM2151, YM2413,
+  YM2203, YM2608, YM2610, YM3812, YM3526, Y8950, YMF262, Game Boy, NES APU,
+  HuC6280, SAA1099 and SCC/K051649. SegaPCM ROM/channel data and supported
+  YM2612 DAC streams can be reconstructed for approximate PCM transcription.
+  Recognizing a command does not imply emulating every feature of its chip.
+</p>
+<h2>PCM and musical accuracy</h2>
+<p>
+  VGM contains chip commands rather than the original score. PCM analysis
+  estimates monophonic notes or percussion from reconstructed audio. Chords,
+  mixed instruments, speech, noise, weak fundamentals and attacks without
+  silence can produce incorrect notes, octaves or region boundaries. Periodicity
+  is an analysis measure, not a calibrated probability of correctness. Review
+  results manually. Recovered WAV output is mono at 22,050 Hz.
+</p>
+<h2>Soundfonts</h2>
+<p>
+  The preview sampler supports PCM16 SF2 samples, key/velocity zones,
+  banks/programs, tuning, pan, loops and volume envelopes. Some presets have a
+  limited keyboard range. Advanced filters, LFOs, modulators, exclusive classes
+  and effects are not fully implemented. SF3/Ogg is unsupported; 24-bit fonts
+  use their 16-bit component. Original SF2 sample and preset names are preserved
+  in either interface language.
+</p>
+<h2>Options and limits</h2>
+<p>
+  BPM changes the MIDI grid while preserving timing in seconds; it is not a
+  playback speed control. Transposition is in semitones. Loop passes affect
+  reconversion. Pitch bend preserves explicit tuning changes; discrete notes may
+  fragment vibrato. More than 15 melodic tracks or multiple percussion tracks
+  use additional MIDI ports that the receiving editor must support.
+</p>
+<p>
+  Limits: 20 songs and 256 MB of input per batch, 64 MB per song, 128 MB
+  decompressed, 30 minutes and 8 loop passes. PCM limits: 16 million captures, 4
+  million stream steps, 64 MB counted recovered audio, 2,048 regions. SegaPCM
+  ROM: 64 MB per chip. SF2: 256 MB input and 64 MB AudioBuffer cache. Preview:
+  up to 256 sample/oscillator voices and 16 SF2 layers per note. Monitors
+  display 12 tracks per page; PCM displays 20 regions per page.
+</p>
+<p>
+  RF5C68/164, PWM, OPL4, QSound and other unsupported chips/ADPCM remain outside
+  transcription. MP3, WAV, MIDI, NSF, SPC and standalone ROM files cannot be
+  imported as songs. Silence and unsupported-only files do not generate an empty
+  MIDI.
+</p>
+<h2>Source code</h2>
+<p>
+  src/core contains conversion; src/audio contains playback, SF2 and waveform
+  processing; src/ui contains rendering; src/io contains import/export; src/i18n
+  contains both catalogs and language handling; src/styles contains CSS;
+  src/workers contains the conversion protocol. docs contains bilingual help and
+  the review, scripts contains build/package tools, tests contains verification
+  and fixtures, and assets/soundfonts contains the supplied SF2. Build with
+  python3 scripts/build.py. Runtime requires no dependencies.
+</p>
+<h2>Credits</h2>
+<p>
+  Original VGM2MID: Paul Jensen, with updates by Valley Bell. This web edition
+  is independent. The user-supplied Mega 16-Bit FM SF2 is preserved unchanged.
+</p>

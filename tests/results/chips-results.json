@@ -1,0 +1,46 @@
+{
+  "total": 10,
+  "passed": 10,
+  "results": [
+    {
+      "name": "HuC6280: tom, pan e key-on/off",
+      "status": "PASS"
+    },
+    {
+      "name": "HuC6280: ruído e aviso DDA/LFO",
+      "status": "PASS"
+    },
+    {
+      "name": "SAA1099: frequência, octave e estéreo",
+      "status": "PASS"
+    },
+    {
+      "name": "SCC/K051649: frequência e key-on",
+      "status": "PASS"
+    },
+    {
+      "name": "SCC: segundo chip independente",
+      "status": "PASS"
+    },
+    {
+      "name": "SegaPCM: ROM e nota PCM recuperada",
+      "status": "PASS"
+    },
+    {
+      "name": "SegaPCM: ausência/offset inválido da ROM é diagnosticado",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI preserva banco e programa selecionados na SF2",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset melódico em pista de ruído sai em canal melódico",
+      "status": "PASS"
+    },
+    {
+      "name": "SegaPCM respeita bank shift zero explicitamente configurado",
+      "status": "PASS"
+    }
+  ]
+}

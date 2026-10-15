@@ -1,0 +1,103 @@
+{
+  "environment": "jsdom + simulated Canvas/Web Audio; no real browser",
+  "total": 24,
+  "passed": 24,
+  "results": [
+    {
+      "name": "PT-BR é o padrão e o seletor tem ambos os idiomas",
+      "status": "PASS"
+    },
+    {
+      "name": "English traduz controles, campos, áreas e acessibilidade",
+      "status": "PASS"
+    },
+    {
+      "name": "Ajuda e análise trocam o documento e mantêm links técnicos",
+      "status": "PASS"
+    },
+    {
+      "name": "Músicas inválidas e separação SF2 geram mensagens em inglês",
+      "status": "PASS"
+    },
+    {
+      "name": "Demo em inglês converte em Worker e traduz instrumentos GM",
+      "status": "PASS"
+    },
+    {
+      "name": "Troca de idioma preserva nós, instrumentos, volume, transposição e posição",
+      "status": "PASS"
+    },
+    {
+      "name": "Mudança durante reprodução não para o áudio nem zera o transporte",
+      "status": "PASS"
+    },
+    {
+      "name": "Erros do parser e nomes de arquivo são preservados/traduzidos separadamente",
+      "status": "PASS"
+    },
+    {
+      "name": "Metadados GD3 com marcação permanecem texto original em ambos os idiomas",
+      "status": "PASS"
+    },
+    {
+      "name": "PCM, páginas, opções e notas inferidas são traduzidos",
+      "status": "PASS"
+    },
+    {
+      "name": "Soundfont real mantém nome/presets e seleção quando o idioma muda",
+      "status": "PASS"
+    },
+    {
+      "name": "Diagnóstico baixado usa inglês e identifica a soundfont da prévia",
+      "status": "PASS"
+    },
+    {
+      "name": "Erro SF2 inválida traduz mensagem e preserva a fonte",
+      "status": "PASS"
+    },
+    {
+      "name": "Ativar/desativar todas altera exportação e preserva escolhas",
+      "status": "PASS"
+    },
+    {
+      "name": "Legenda de instrumento segue o motor de prévia",
+      "status": "PASS"
+    },
+    {
+      "name": "Atalho Espaço pausa/retoma e não captura eventos dos campos",
+      "status": "PASS"
+    },
+    {
+      "name": "Catálogos PT/EN têm todas as chaves e 128 instrumentos traduzidos",
+      "status": "PASS"
+    },
+    {
+      "name": "Preferência English é restaurada ao abrir",
+      "status": "PASS"
+    },
+    {
+      "name": "Armazenamento bloqueado mantém a troca funcional",
+      "status": "PASS"
+    },
+    {
+      "name": "HTML em origem file não depende de armazenamento ou servidor",
+      "status": "PASS"
+    },
+    {
+      "name": "Alternar idiomas repetidamente não duplica controles nem perde nós",
+      "status": "PASS"
+    },
+    {
+      "name": "As 128 opções GM exibidas usam os nomes ingleses completos",
+      "status": "PASS"
+    },
+    {
+      "name": "Interface estática inglesa não conserva legendas portuguesas por quebras de linha",
+      "status": "PASS"
+    },
+    {
+      "name": "Não há erros JavaScript não tratados nos fluxos bilíngues",
+      "status": "PASS"
+    }
+  ]
+}

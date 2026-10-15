@@ -1,0 +1,159 @@
+{
+  "environment": "jsdom 26.1.0 + Node worker_threads; canvas/audio simulados; sem navegador real",
+  "total": 38,
+  "passed": 38,
+  "results": [
+    {
+      "name": "Inicialização do HTML inteiro sem erro de script",
+      "status": "PASS"
+    },
+    {
+      "name": "Seletores independentes têm filtros exclusivos e botões próprios",
+      "status": "PASS"
+    },
+    {
+      "name": "Adicionar músicas rejeita SF2 sem ler ou carregar a fonte",
+      "status": "PASS"
+    },
+    {
+      "name": "Carregar SF2 rejeita VGM sem abrir ou converter música",
+      "status": "PASS"
+    },
+    {
+      "name": "Áreas de arrastar arquivos também mantêm os formatos separados",
+      "status": "PASS"
+    },
+    {
+      "name": "Demonstração: clique, Worker real de Node, 4 pistas e 64 notas",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI baixável contém assinatura MThd",
+      "status": "PASS"
+    },
+    {
+      "name": "Instrumento e transposição de pista alteram MIDI",
+      "status": "PASS"
+    },
+    {
+      "name": "Desabilitar todas as pistas mostra erro, sem download vazio",
+      "status": "PASS"
+    },
+    {
+      "name": "Prévia e parada acionam API de áudio simulada",
+      "status": "PASS"
+    },
+    {
+      "name": "BPM inválido bloqueia exportação",
+      "status": "PASS"
+    },
+    {
+      "name": "Navegação entre conversor, ajuda e análise",
+      "status": "PASS"
+    },
+    {
+      "name": "VGZ importado pelo input e processado",
+      "status": "PASS"
+    },
+    {
+      "name": "Loop 3 passagens: reconversão pelo botão",
+      "status": "PASS"
+    },
+    {
+      "name": "GD3 com markup é exibido como texto inerte",
+      "status": "PASS"
+    },
+    {
+      "name": "Arquivo truncado apresenta erro e não mostra resultado anterior",
+      "status": "PASS"
+    },
+    {
+      "name": "Cancelamento termina Worker e restaura os controles",
+      "status": "PASS"
+    },
+    {
+      "name": "ZIP do lote exclui erros e inclui diagnósticos",
+      "status": "PASS"
+    },
+    {
+      "name": "Remoção de arquivo e contador da fila",
+      "status": "PASS"
+    },
+    {
+      "name": "Demo PCM exibe trechos, notas e controles",
+      "status": "PASS"
+    },
+    {
+      "name": "PCM manual altera nota e pista para percussão",
+      "status": "PASS"
+    },
+    {
+      "name": "WAV baixável contém RIFF e pode ser ouvido",
+      "status": "PASS"
+    },
+    {
+      "name": "Reconversão inválida preserva resultado e ajustes PCM",
+      "status": "PASS"
+    },
+    {
+      "name": "Reconversão válida mantém mapeamento PCM compatível",
+      "status": "PASS"
+    },
+    {
+      "name": "PCM ignorado sai das notas e pode ser restaurado",
+      "status": "PASS"
+    },
+    {
+      "name": "Falha síncrona ao enviar Worker limpa controles e preserva música",
+      "status": "PASS"
+    },
+    {
+      "name": "Novo HUD cria um osciloscópio e 12 teclas por pista",
+      "status": "PASS"
+    },
+    {
+      "name": "Os scopes leem os analisadores durante a reprodução e as teclas acendem",
+      "status": "PASS"
+    },
+    {
+      "name": "Pausar preserva posição e continuar retoma o transporte",
+      "status": "PASS"
+    },
+    {
+      "name": "Carregar a SF2 enviada mostra os 206 presets",
+      "status": "PASS"
+    },
+    {
+      "name": "Preset SF2 de banco 7 é selecionado e exportado para o MIDI",
+      "status": "PASS"
+    },
+    {
+      "name": "Reprodução SF2 usa samples reais e pode ser parada",
+      "status": "PASS"
+    },
+    {
+      "name": "SF2 inválida preserva o banco anterior",
+      "status": "PASS"
+    },
+    {
+      "name": "VGM no seletor SF2 preserva o banco e a música existentes",
+      "status": "PASS"
+    },
+    {
+      "name": "Remover SF2 restaura síntese simples e controles GM",
+      "status": "PASS"
+    },
+    {
+      "name": "Animações podem ser desativadas",
+      "status": "PASS"
+    },
+    {
+      "name": "Demo SegaPCM converte e exibe trechos e scopes",
+      "status": "PASS"
+    },
+    {
+      "name": "Sem erros JavaScript não tratados durante os fluxos",
+      "status": "PASS"
+    }
+  ]
+}

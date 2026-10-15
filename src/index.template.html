@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>VGM2MID Mega Drive Studio 3.2</title>
+    <style>
+      __CSS__
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">MD</div>
+        <div class="wordmark">VGM2MID<span>MEGA DRIVE STUDIO / 3.2</span></div>
+      </div>
+      <label class="language-control"
+        ><span>Idioma / Language</span
+        ><select id="language" aria-label="Idioma / Language">
+          <option value="pt-BR">Português (BR)</option>
+          <option value="en">English</option>
+        </select></label
+      ><span class="offline">16-BIT SOUND · OFFLINE</span>
+    </header>
+    <div class="layout">
+      <aside>
+        <div class="aside-head">
+          <span class="overline">Sua biblioteca</span
+          ><span id="file-count">0 / 20</span>
+        </div>
+        <small class="import-hint">Músicas: .vgm / .vgz / .vgm.gz / .gym</small
+        ><button id="add-file" class="primary">＋ Adicionar músicas</button
+        ><input
+          id="file-input"
+          type="file"
+          accept=".vgm,.vgz,.gz,.gym"
+          aria-label="Selecionar músicas VGM, VGZ ou GYM"
+          multiple
+          hidden
+        />
+        <div id="files">
+          <div class="empty-queue">
+            Carregue uma música ou experimente uma demo.
+          </div>
+        </div>
+        <button id="export-all" disabled>↓ Baixar lote em ZIP</button>
+        <div class="aside-bottom">
+          <p>VGM / VGZ / GYM → MIDI</p>
+          <p>
+            Instrumentos SF2 por pista.<br />Conversão e áudio no seu navegador.
+          </p>
+        </div>
+      </aside>
+      <main class="main">
+        <nav aria-label="Seções">
+          <button class="active" data-view="convert">Estúdio</button
+          ><button data-view="compat">Como usar</button
+          ><button data-view="audit">Análise técnica</button>
+        </nav>
+        <section class="view" id="view-convert">
+          <div class="hero">
+            <div>
+              <span class="overline">FM + PSG + PCM / MIDI STUDIO</span>
+              <h1>Dê vida às suas<br />trilhas de videogame.</h1>
+              <p>
+                Converta, escolha os timbres e acompanhe cada pista.<br />Notas
+                animadas e osciloscópios ligados ao áudio que você está ouvindo.
+              </p>
+            </div>
+            <div class="drive-badge" aria-hidden="true">
+              <b>16</b><span>BIT AUDIO</span>
+            </div>
+          </div>
+          <section
+            id="sf-drop"
+            class="panel fontbar"
+            aria-label="Carregar soundfont SF2"
+          >
+            <div class="font-icon" aria-hidden="true">SF</div>
+            <div class="font-info">
+              <strong id="sf-name">Soundfont · somente SF2</strong
+              ><span id="sf-status"
+                >Arraste somente uma .sf2 aqui ou clique em Carregar SF2.</span
+              >
+            </div>
+            <div class="row">
+              <button id="sf-load" class="small">＋ Carregar SF2</button
+              ><button id="sf-remove" class="small" disabled>Remover</button
+              ><input
+                id="sf-input"
+                type="file"
+                accept=".sf2"
+                aria-label="Selecionar somente soundfont SF2"
+                hidden
+              /><select id="audio-engine" aria-label="Modo de prévia">
+                <option value="synth">Síntese simples</option>
+                <option value="sf2" disabled>Soundfont SF2</option>
+              </select>
+            </div>
+          </section>
+          <div class="drop" id="drop">
+            <div>
+              <strong>Arraste somente suas músicas</strong>
+              <p>VGM · VGZ · GYM · até 64 MB por música</p>
+            </div>
+            <div class="row">
+              <button id="browse" class="primary">Selecionar músicas</button
+              ><button id="demo" class="ghost">Demo PSG</button
+              ><button id="demo-pcm" class="ghost">Demo DAC</button
+              ><button id="demo-extra" class="ghost">Demo SegaPCM</button>
+            </div>
+          </div>
+          <div id="status" role="status" aria-live="polite">
+            Pronto. Selecione uma música ou experimente uma demonstração.
+          </div>
+          <div id="busybar" hidden></div>
+          <div class="panel options-panel">
+            <div class="panel-body options">
+              <label class="field"
+                >Grade MIDI / BPM<input
+                  id="bpm"
+                  type="number"
+                  min="20"
+                  max="300"
+                  value="120" /></label
+              ><label class="field"
+                >Transposição geral<input
+                  id="transpose"
+                  type="number"
+                  min="-48"
+                  max="48"
+                  value="0" /></label
+              ><label class="field"
+                >Passagens pelo loop<input
+                  id="loops"
+                  type="number"
+                  min="1"
+                  max="8"
+                  value="1" /></label
+              ><label class="field"
+                >Afinação<select id="pitch">
+                  <option value="bend">Pitch bend</option>
+                  <option value="notes">Notas discretas</option>
+                </select></label
+              ><label class="field"
+                >Quadros GYM<select id="gym-rate">
+                  <option value="60">60 Hz</option>
+                  <option value="50">50 Hz</option>
+                </select></label
+              ><button id="reconvert" class="small" disabled>
+                Reconverter selecionado
+              </button>
+            </div>
+          </div>
+          <div id="result" hidden>
+            <div class="stats">
+              <div class="stat">
+                <b id="stat-time">—</b><span>DURAÇÃO</span>
+              </div>
+              <div class="stat">
+                <b id="stat-tracks">—</b><span>PISTAS</span>
+              </div>
+              <div class="stat">
+                <b id="stat-notes">—</b><span>NOTAS EXTRAÍDAS</span>
+              </div>
+              <div class="stat">
+                <b id="stat-format">—</b><span>ORIGEM</span>
+              </div>
+            </div>
+            <section class="scope-panel">
+              <div class="scope-head">
+                <div>
+                  <h2>Monitor de pistas</h2>
+                  <small
+                    >Áudio por pista · escala visual automática · indicador de
+                    nível real</small
+                  >
+                </div>
+                <label class="row scope-toggle"
+                  ><input id="animations" type="checkbox" checked />
+                  Animações</label
+                >
+              </div>
+              <div id="scope-grid" class="scope-grid"></div>
+              <div id="scope-nav" class="row scope-nav"></div>
+            </section>
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2 id="song-title">Música</h2>
+                  <div id="chips"></div>
+                </div>
+                <div class="row transport">
+                  <button id="play" class="play-main">▶ Ouvir prévia</button
+                  ><button id="pause" class="small" disabled>Ⅱ Pausar</button
+                  ><button id="stop" class="small" disabled>■ Parar</button>
+                </div>
+              </div>
+              <div class="timeline">
+                <canvas
+                  id="roll"
+                  aria-label="Piano roll das notas extraídas"
+                ></canvas
+                ><input
+                  id="seek"
+                  type="range"
+                  min="0"
+                  max="1000"
+                  value="0"
+                  step="1"
+                  aria-label="Posição da prévia"
+                />
+                <div
+                  class="row"
+                  style="justify-content: space-between; padding: 8px 10px"
+                >
+                  <span id="clock">0:00 / 0:00</span
+                  ><span class="hint" style="margin: 0"
+                    >SF2 ou síntese simples · o MIDI exporta notas, bancos e
+                    programas</span
+                  >
+                </div>
+              </div>
+              <div class="track-actions">
+                <small>Espaço: reproduzir / pausar</small
+                ><button id="tracks-enable" class="small">Ativar todas</button
+                ><button id="tracks-disable" class="small">
+                  Desativar todas
+                </button>
+              </div>
+              <div class="table-scroll">
+                <table id="tracks">
+                  <thead>
+                    <tr>
+                      <th>USAR</th>
+                      <th>PISTA</th>
+                      <th>INSTRUMENTO / PRESET SF2</th>
+                      <th>VOLUME</th>
+                      <th>SEMITONS</th>
+                    </tr>
+                  </thead>
+                  <tbody id="track-body"></tbody>
+                </table>
+              </div>
+              <section id="pcm-panel" style="padding: 20px" hidden></section>
+              <details class="warnings" id="warnings" hidden>
+                <summary id="warning-title">Avisos</summary>
+                <ul id="warning-list"></ul>
+              </details>
+              <div class="export-bar">
+                <div>
+                  <strong>Pronto para editar</strong>
+                  <p>MIDI tipo 1 · 960 PPQ · pistas separadas</p>
+                </div>
+                <div class="row">
+                  <button id="diagnostic" class="ghost small">
+                    Baixar diagnóstico</button
+                  ><button id="download" class="primary">↓ Baixar MIDI</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="empty-main" class="panel empty-main">
+            <div class="music-icon" aria-hidden="true">16</div>
+            <h2>O estúdio está pronto.</h2>
+            <p>
+              Carregue sua trilha e dê play.<br />Os monitores vão mostrar cada
+              pista em ação.
+            </p>
+            <p class="hint">Experimente Demo PSG, Demo DAC ou Demo SegaPCM.</p>
+          </div>
+        </section>
+        <section class="view doc" id="view-compat" hidden>__HELP__</section>
+        <section class="view doc" id="view-audit" hidden>__AUDIT__</section>
+        <footer>
+          VGM2MID MEGA DRIVE STUDIO 3.2 · LOCAL / OFFLINE · PAUL JENSEN &amp;
+          VALLEY BELL — CRÉDITOS DO ORIGINAL
+        </footer>
+      </main>
+    </div>
+    <script id="i18n-catalog">
+      __CATALOG__;
+    </script>
+    <script>
+      __I18N__;
+    </script>
+    <script id="worker-protocol" type="text/plain">
+      __WORKER__
+    </script>
+    <script id="vgm-core">
+      __CORE__;
+    </script>
+    <script id="sf2-core">
+      __SF2__;
+    </script>
+    <script id="scope-core">
+      __SCOPES__;
+    </script>
+    <script>
+      __APP__;
+    </script>
+  </body>
+</html>

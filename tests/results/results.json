@@ -1,0 +1,231 @@
+{
+  "total": 56,
+  "passed": 56,
+  "failed": 0,
+  "results": [
+    {
+      "name": "PSG: A4, frequência e duração de 1 s",
+      "status": "PASS"
+    },
+    {
+      "name": "Volume PSG atenuado a 15 encerra nota",
+      "status": "PASS"
+    },
+    {
+      "name": "Latch PSG de volume aceita byte sem bit 7",
+      "status": "PASS"
+    },
+    {
+      "name": "Notas em canais de PSG distintos",
+      "status": "PASS"
+    },
+    {
+      "name": "Estéreo Game Gear e pan no MIDI",
+      "status": "PASS"
+    },
+    {
+      "name": "YM2612: escrita high-low, A4, key on/off",
+      "status": "PASS"
+    },
+    {
+      "name": "YM2612: pan 0 silencia canal",
+      "status": "PASS"
+    },
+    {
+      "name": "YM2203: frequência FM A4",
+      "status": "PASS"
+    },
+    {
+      "name": "YM2608: frequência FM A4",
+      "status": "PASS"
+    },
+    {
+      "name": "YM2610: frequência FM A4",
+      "status": "PASS"
+    },
+    {
+      "name": "YM2151: keycode A4 e fração de nota",
+      "status": "PASS"
+    },
+    {
+      "name": "YM2413: A4 e instrumento violin",
+      "status": "PASS"
+    },
+    {
+      "name": "YM3812: A4 OPL",
+      "status": "PASS"
+    },
+    {
+      "name": "YM3526: A4 OPL",
+      "status": "PASS"
+    },
+    {
+      "name": "Y8950: A4 OPL",
+      "status": "PASS"
+    },
+    {
+      "name": "YMF262: A4 OPL",
+      "status": "PASS"
+    },
+    {
+      "name": "AY8910: A4, mixer e volume",
+      "status": "PASS"
+    },
+    {
+      "name": "Game Boy: frequência A4 e trigger",
+      "status": "PASS"
+    },
+    {
+      "name": "Game Boy: DAC off encerra nota",
+      "status": "PASS"
+    },
+    {
+      "name": "Game Boy: contador length corta som sem key off explícito",
+      "status": "PASS"
+    },
+    {
+      "name": "NES: pulso A4",
+      "status": "PASS"
+    },
+    {
+      "name": "NES: desabilitar canal encerra nota",
+      "status": "PASS"
+    },
+    {
+      "name": "NES: triângulo A4 e contador linear",
+      "status": "PASS"
+    },
+    {
+      "name": "Dual chip: estado PSG independente",
+      "status": "PASS"
+    },
+    {
+      "name": "Escritas de frequência no mesmo instante não geram notas fantasmas",
+      "status": "PASS"
+    },
+    {
+      "name": "Todos os waits: 61, 62, 63, 7n, 8n e override 64",
+      "status": "PASS"
+    },
+    {
+      "name": "Loop: introdução uma vez, loop 3 vezes, marcadores",
+      "status": "PASS"
+    },
+    {
+      "name": "GZIP detectado por assinatura mesmo com extensão .vgm",
+      "status": "PASS"
+    },
+    {
+      "name": "CRC de GZIP corrompido causa erro",
+      "status": "PASS"
+    },
+    {
+      "name": "GYM 50/60 Hz preserva o tempo escolhido",
+      "status": "PASS"
+    },
+    {
+      "name": "Cabeçalho curto não interpreta comandos como clocks",
+      "status": "PASS"
+    },
+    {
+      "name": "Cabeçalho antigo 1.00 usa início fixo 0x40",
+      "status": "PASS"
+    },
+    {
+      "name": "GD3 Unicode é lido sem interpretar HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "Comandos PCM/chips não suportados preservam os waits e avisam",
+      "status": "PASS"
+    },
+    {
+      "name": "Bloco de dados 67 é pulado sem consumir comandos falsos",
+      "status": "PASS"
+    },
+    {
+      "name": "Entrada inválida: Cabeçalho curto",
+      "status": "PASS"
+    },
+    {
+      "name": "Entrada inválida: Assinatura incorreta",
+      "status": "PASS"
+    },
+    {
+      "name": "Entrada inválida: Comando truncado",
+      "status": "PASS"
+    },
+    {
+      "name": "Entrada inválida: Bloco truncado",
+      "status": "PASS"
+    },
+    {
+      "name": "Entrada inválida: Fim 66 ausente",
+      "status": "PASS"
+    },
+    {
+      "name": "Entrada inválida: Comando desconhecido",
+      "status": "PASS"
+    },
+    {
+      "name": "EOF além dos bytes disponíveis é rejeitado",
+      "status": "PASS"
+    },
+    {
+      "name": "Offset de loop no meio de comando é rejeitado",
+      "status": "PASS"
+    },
+    {
+      "name": "Loop de tempo zero é rejeitado",
+      "status": "PASS"
+    },
+    {
+      "name": "Duração acima de 30 minutos é limitada",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI: tipo 1, 960 PPQ, chunks e notas balanceados",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI: mudar BPM mantém duração em segundos",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI: canal 10 só para percussão e portas isolam CCs",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI: instrumento, transposição e exclusão de pista",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI: pitch bend negativo e RPN de 24 semitons",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI: notas muito curtas não ficam presas nem se sobrepõem",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI: erro ao exportar sem notas ou sem pistas ativas",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI: BPM e transposições inválidos são rejeitados",
+      "status": "PASS"
+    },
+    {
+      "name": "MIDI: 20 mil notas sem erro de tamanho/stack",
+      "status": "PASS"
+    },
+    {
+      "name": "ZIP offline: assinatura, CRC, tamanhos e nome UTF-8",
+      "status": "PASS"
+    },
+    {
+      "name": "Mutações determinísticas: erros controlados em 200 entradas",
+      "status": "PASS"
+    }
+  ]
+}
