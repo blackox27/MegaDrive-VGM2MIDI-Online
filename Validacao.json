@@ -1,0 +1,833 @@
+{
+  "version": "3.2.0",
+  "date": "2026-10-15",
+  "total": 192,
+  "passed": 192,
+  "real_browser_tested": false,
+  "interface_environment": "jsdom with mocked Canvas and Web Audio; Node Workers",
+  "vgm_fixtures": "synthetic",
+  "soundfont_fixture": "original supplied PCM16 SF2, unchanged",
+  "groups": {
+    "parser": {
+      "total": 56,
+      "passed": 56,
+      "failed": 0,
+      "results": [
+        {
+          "name": "PSG: A4, frequência e duração de 1 s",
+          "status": "PASS"
+        },
+        {
+          "name": "Volume PSG atenuado a 15 encerra nota",
+          "status": "PASS"
+        },
+        {
+          "name": "Latch PSG de volume aceita byte sem bit 7",
+          "status": "PASS"
+        },
+        {
+          "name": "Notas em canais de PSG distintos",
+          "status": "PASS"
+        },
+        {
+          "name": "Estéreo Game Gear e pan no MIDI",
+          "status": "PASS"
+        },
+        {
+          "name": "YM2612: escrita high-low, A4, key on/off",
+          "status": "PASS"
+        },
+        {
+          "name": "YM2612: pan 0 silencia canal",
+          "status": "PASS"
+        },
+        {
+          "name": "YM2203: frequência FM A4",
+          "status": "PASS"
+        },
+        {
+          "name": "YM2608: frequência FM A4",
+          "status": "PASS"
+        },
+        {
+          "name": "YM2610: frequência FM A4",
+          "status": "PASS"
+        },
+        {
+          "name": "YM2151: keycode A4 e fração de nota",
+          "status": "PASS"
+        },
+        {
+          "name": "YM2413: A4 e instrumento violin",
+          "status": "PASS"
+        },
+        {
+          "name": "YM3812: A4 OPL",
+          "status": "PASS"
+        },
+        {
+          "name": "YM3526: A4 OPL",
+          "status": "PASS"
+        },
+        {
+          "name": "Y8950: A4 OPL",
+          "status": "PASS"
+        },
+        {
+          "name": "YMF262: A4 OPL",
+          "status": "PASS"
+        },
+        {
+          "name": "AY8910: A4, mixer e volume",
+          "status": "PASS"
+        },
+        {
+          "name": "Game Boy: frequência A4 e trigger",
+          "status": "PASS"
+        },
+        {
+          "name": "Game Boy: DAC off encerra nota",
+          "status": "PASS"
+        },
+        {
+          "name": "Game Boy: contador length corta som sem key off explícito",
+          "status": "PASS"
+        },
+        {
+          "name": "NES: pulso A4",
+          "status": "PASS"
+        },
+        {
+          "name": "NES: desabilitar canal encerra nota",
+          "status": "PASS"
+        },
+        {
+          "name": "NES: triângulo A4 e contador linear",
+          "status": "PASS"
+        },
+        {
+          "name": "Dual chip: estado PSG independente",
+          "status": "PASS"
+        },
+        {
+          "name": "Escritas de frequência no mesmo instante não geram notas fantasmas",
+          "status": "PASS"
+        },
+        {
+          "name": "Todos os waits: 61, 62, 63, 7n, 8n e override 64",
+          "status": "PASS"
+        },
+        {
+          "name": "Loop: introdução uma vez, loop 3 vezes, marcadores",
+          "status": "PASS"
+        },
+        {
+          "name": "GZIP detectado por assinatura mesmo com extensão .vgm",
+          "status": "PASS"
+        },
+        {
+          "name": "CRC de GZIP corrompido causa erro",
+          "status": "PASS"
+        },
+        {
+          "name": "GYM 50/60 Hz preserva o tempo escolhido",
+          "status": "PASS"
+        },
+        {
+          "name": "Cabeçalho curto não interpreta comandos como clocks",
+          "status": "PASS"
+        },
+        {
+          "name": "Cabeçalho antigo 1.00 usa início fixo 0x40",
+          "status": "PASS"
+        },
+        {
+          "name": "GD3 Unicode é lido sem interpretar HTML",
+          "status": "PASS"
+        },
+        {
+          "name": "Comandos PCM/chips não suportados preservam os waits e avisam",
+          "status": "PASS"
+        },
+        {
+          "name": "Bloco de dados 67 é pulado sem consumir comandos falsos",
+          "status": "PASS"
+        },
+        {
+          "name": "Entrada inválida: Cabeçalho curto",
+          "status": "PASS"
+        },
+        {
+          "name": "Entrada inválida: Assinatura incorreta",
+          "status": "PASS"
+        },
+        {
+          "name": "Entrada inválida: Comando truncado",
+          "status": "PASS"
+        },
+        {
+          "name": "Entrada inválida: Bloco truncado",
+          "status": "PASS"
+        },
+        {
+          "name": "Entrada inválida: Fim 66 ausente",
+          "status": "PASS"
+        },
+        {
+          "name": "Entrada inválida: Comando desconhecido",
+          "status": "PASS"
+        },
+        {
+          "name": "EOF além dos bytes disponíveis é rejeitado",
+          "status": "PASS"
+        },
+        {
+          "name": "Offset de loop no meio de comando é rejeitado",
+          "status": "PASS"
+        },
+        {
+          "name": "Loop de tempo zero é rejeitado",
+          "status": "PASS"
+        },
+        {
+          "name": "Duração acima de 30 minutos é limitada",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI: tipo 1, 960 PPQ, chunks e notas balanceados",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI: mudar BPM mantém duração em segundos",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI: canal 10 só para percussão e portas isolam CCs",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI: instrumento, transposição e exclusão de pista",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI: pitch bend negativo e RPN de 24 semitons",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI: notas muito curtas não ficam presas nem se sobrepõem",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI: erro ao exportar sem notas ou sem pistas ativas",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI: BPM e transposições inválidos são rejeitados",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI: 20 mil notas sem erro de tamanho/stack",
+          "status": "PASS"
+        },
+        {
+          "name": "ZIP offline: assinatura, CRC, tamanhos e nome UTF-8",
+          "status": "PASS"
+        },
+        {
+          "name": "Mutações determinísticas: erros controlados em 200 entradas",
+          "status": "PASS"
+        }
+      ]
+    },
+    "pcm_dac": {
+      "total": 28,
+      "passed": 28,
+      "results": [
+        {
+          "name": "Stream 0x95 recupera Lá4 440 Hz e exporta MIDI",
+          "status": "PASS"
+        },
+        {
+          "name": "Stream 0x93 em comandos mantém duração",
+          "status": "PASS"
+        },
+        {
+          "name": "Escritas DAC diretas produzem nota 69",
+          "status": "PASS"
+        },
+        {
+          "name": "DAC desabilitado não gera notas",
+          "status": "PASS"
+        },
+        {
+          "name": "Banco 0, seek E0 e comandos 8n produzem nota 72",
+          "status": "PASS"
+        },
+        {
+          "name": "Dois blocos concatenados respeitam seek e limites",
+          "status": "PASS"
+        },
+        {
+          "name": "Ruído recebe sugestão de percussão",
+          "status": "PASS"
+        },
+        {
+          "name": "Mudança de nota em áudio contínuo é segmentada",
+          "status": "PASS"
+        },
+        {
+          "name": "Mapeamento manual muda percussão e permite ignorar",
+          "status": "PASS"
+        },
+        {
+          "name": "WAV PCM16 tem cabeçalho e tamanho consistentes",
+          "status": "PASS"
+        },
+        {
+          "name": "Leitura de banco ausente/fim gera erro claro",
+          "status": "PASS"
+        },
+        {
+          "name": "Stream não configurado, frequência zero e índice inválido",
+          "status": "PASS"
+        },
+        {
+          "name": "Stream reverso recupera sequência invertida",
+          "status": "PASS"
+        },
+        {
+          "name": "Stream loop repete sample até stop FF",
+          "status": "PASS"
+        },
+        {
+          "name": "Step size e base respeitam dados intercalados",
+          "status": "PASS"
+        },
+        {
+          "name": "Segundo YM2612 DAC cria canal independente",
+          "status": "PASS"
+        },
+        {
+          "name": "Compressão n-bit shift: 4 bits MSB primeiro",
+          "status": "PASS"
+        },
+        {
+          "name": "Tabela/DPCM inválida é rejeitada antes da alocação",
+          "status": "PASS"
+        },
+        {
+          "name": "Escritas simultâneas emitem diagnóstico de tempo",
+          "status": "PASS"
+        },
+        {
+          "name": "DPCM de 8 bits usa tabela de deltas e acumulador",
+          "status": "PASS"
+        },
+        {
+          "name": "N-bit por tabela decodifica índices de 4 bits",
+          "status": "PASS"
+        },
+        {
+          "name": "Loop VGM não duplica blocos nem muda o índice 0x95",
+          "status": "PASS"
+        },
+        {
+          "name": "0x93 modos milissegundos e até fim do banco",
+          "status": "PASS"
+        },
+        {
+          "name": "Desligar ambas as saídas de pan silencia PCM",
+          "status": "PASS"
+        },
+        {
+          "name": "Tons graves/agudos são identificados dentro de um semitom",
+          "status": "PASS"
+        },
+        {
+          "name": "Silêncio digital não produz notas PCM falsas",
+          "status": "PASS"
+        },
+        {
+          "name": "Tabelas e comandos truncados têm erros controlados",
+          "status": "PASS"
+        },
+        {
+          "name": "Stream mudo contínuo respeita limite de processamento",
+          "status": "PASS"
+        }
+      ]
+    },
+    "chips_midi": {
+      "total": 10,
+      "passed": 10,
+      "results": [
+        {
+          "name": "HuC6280: tom, pan e key-on/off",
+          "status": "PASS"
+        },
+        {
+          "name": "HuC6280: ruído e aviso DDA/LFO",
+          "status": "PASS"
+        },
+        {
+          "name": "SAA1099: frequência, octave e estéreo",
+          "status": "PASS"
+        },
+        {
+          "name": "SCC/K051649: frequência e key-on",
+          "status": "PASS"
+        },
+        {
+          "name": "SCC: segundo chip independente",
+          "status": "PASS"
+        },
+        {
+          "name": "SegaPCM: ROM e nota PCM recuperada",
+          "status": "PASS"
+        },
+        {
+          "name": "SegaPCM: ausência/offset inválido da ROM é diagnosticado",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI preserva banco e programa selecionados na SF2",
+          "status": "PASS"
+        },
+        {
+          "name": "Preset melódico em pista de ruído sai em canal melódico",
+          "status": "PASS"
+        },
+        {
+          "name": "SegaPCM respeita bank shift zero explicitamente configurado",
+          "status": "PASS"
+        }
+      ]
+    },
+    "sf2": {
+      "total": 11,
+      "passed": 11,
+      "results": [
+        {
+          "name": "SF2 real: 206 presets, 584 samples e 1639 regiões",
+          "status": "PASS"
+        },
+        {
+          "name": "Todos os presets têm regiões dentro dos samples e ranges MIDI",
+          "status": "PASS"
+        },
+        {
+          "name": "Seleção automática/manual preserva os bancos reais",
+          "status": "PASS"
+        },
+        {
+          "name": "AudioBuffer é gerado a partir do PCM16 real da SF2",
+          "status": "PASS"
+        },
+        {
+          "name": "Velocidade e tecla escolhem zonas reais",
+          "status": "PASS"
+        },
+        {
+          "name": "Nota SF2 usa BufferSource, afinação, envelope e controles finitos",
+          "status": "PASS"
+        },
+        {
+          "name": "Loops SF2 têm intervalos válidos e seek fica dentro deles",
+          "status": "PASS"
+        },
+        {
+          "name": "Cache pode ser limitado e samples não ficam duplicados sem limite",
+          "status": "PASS"
+        },
+        {
+          "name": "SF2 truncada, assinatura e chunks gigantes são rejeitados",
+          "status": "PASS"
+        },
+        {
+          "name": "Índices de bags corrompidos retornam erro controlado",
+          "status": "PASS"
+        },
+        {
+          "name": "Offsets de envelope no preset somam ao padrão do instrumento",
+          "status": "PASS"
+        }
+      ]
+    },
+    "waveform": {
+      "environment": "Node; sinais sintéticos; sem captura de áudio de navegador",
+      "total": 12,
+      "passed": 12,
+      "results": [
+        {
+          "name": "Sinal baixo de 440 Hz ocupa a altura do monitor",
+          "status": "PASS"
+        },
+        {
+          "name": "Nota grave de 55 Hz mostra dois ciclos completos",
+          "status": "PASS"
+        },
+        {
+          "name": "Taxa de 48 kHz preserva a janela temporal",
+          "status": "PASS"
+        },
+        {
+          "name": "Escala do gráfico não altera os samples originais",
+          "status": "PASS"
+        },
+        {
+          "name": "Silêncio permanece plano mesmo depois de uma nota forte",
+          "status": "PASS"
+        },
+        {
+          "name": "Nenhum áudio conectado permanece plano",
+          "status": "PASS"
+        },
+        {
+          "name": "Offset DC constante permanece plano",
+          "status": "PASS"
+        },
+        {
+          "name": "Offset DC em um sinal é removido apenas da visualização",
+          "status": "PASS"
+        },
+        {
+          "name": "Aumento de amplitude não satura o desenho",
+          "status": "PASS"
+        },
+        {
+          "name": "Medidor conserva RMS baixo sem usar o ganho visual",
+          "status": "PASS"
+        },
+        {
+          "name": "Samples não finitos não contaminam as coordenadas",
+          "status": "PASS"
+        },
+        {
+          "name": "Entrada curta e afinação extrema não saem do buffer",
+          "status": "PASS"
+        }
+      ]
+    },
+    "ui": {
+      "environment": "jsdom 26.1.0 + Node worker_threads; canvas/audio simulados; sem navegador real",
+      "total": 38,
+      "passed": 38,
+      "results": [
+        {
+          "name": "Inicialização do HTML inteiro sem erro de script",
+          "status": "PASS"
+        },
+        {
+          "name": "Seletores independentes têm filtros exclusivos e botões próprios",
+          "status": "PASS"
+        },
+        {
+          "name": "Adicionar músicas rejeita SF2 sem ler ou carregar a fonte",
+          "status": "PASS"
+        },
+        {
+          "name": "Carregar SF2 rejeita VGM sem abrir ou converter música",
+          "status": "PASS"
+        },
+        {
+          "name": "Áreas de arrastar arquivos também mantêm os formatos separados",
+          "status": "PASS"
+        },
+        {
+          "name": "Demonstração: clique, Worker real de Node, 4 pistas e 64 notas",
+          "status": "PASS"
+        },
+        {
+          "name": "MIDI baixável contém assinatura MThd",
+          "status": "PASS"
+        },
+        {
+          "name": "Instrumento e transposição de pista alteram MIDI",
+          "status": "PASS"
+        },
+        {
+          "name": "Desabilitar todas as pistas mostra erro, sem download vazio",
+          "status": "PASS"
+        },
+        {
+          "name": "Prévia e parada acionam API de áudio simulada",
+          "status": "PASS"
+        },
+        {
+          "name": "BPM inválido bloqueia exportação",
+          "status": "PASS"
+        },
+        {
+          "name": "Navegação entre conversor, ajuda e análise",
+          "status": "PASS"
+        },
+        {
+          "name": "VGZ importado pelo input e processado",
+          "status": "PASS"
+        },
+        {
+          "name": "Loop 3 passagens: reconversão pelo botão",
+          "status": "PASS"
+        },
+        {
+          "name": "GD3 com markup é exibido como texto inerte",
+          "status": "PASS"
+        },
+        {
+          "name": "Arquivo truncado apresenta erro e não mostra resultado anterior",
+          "status": "PASS"
+        },
+        {
+          "name": "Cancelamento termina Worker e restaura os controles",
+          "status": "PASS"
+        },
+        {
+          "name": "ZIP do lote exclui erros e inclui diagnósticos",
+          "status": "PASS"
+        },
+        {
+          "name": "Remoção de arquivo e contador da fila",
+          "status": "PASS"
+        },
+        {
+          "name": "Demo PCM exibe trechos, notas e controles",
+          "status": "PASS"
+        },
+        {
+          "name": "PCM manual altera nota e pista para percussão",
+          "status": "PASS"
+        },
+        {
+          "name": "WAV baixável contém RIFF e pode ser ouvido",
+          "status": "PASS"
+        },
+        {
+          "name": "Reconversão inválida preserva resultado e ajustes PCM",
+          "status": "PASS"
+        },
+        {
+          "name": "Reconversão válida mantém mapeamento PCM compatível",
+          "status": "PASS"
+        },
+        {
+          "name": "PCM ignorado sai das notas e pode ser restaurado",
+          "status": "PASS"
+        },
+        {
+          "name": "Falha síncrona ao enviar Worker limpa controles e preserva música",
+          "status": "PASS"
+        },
+        {
+          "name": "Novo HUD cria um osciloscópio e 12 teclas por pista",
+          "status": "PASS"
+        },
+        {
+          "name": "Os scopes leem os analisadores durante a reprodução e as teclas acendem",
+          "status": "PASS"
+        },
+        {
+          "name": "Pausar preserva posição e continuar retoma o transporte",
+          "status": "PASS"
+        },
+        {
+          "name": "Carregar a SF2 enviada mostra os 206 presets",
+          "status": "PASS"
+        },
+        {
+          "name": "Preset SF2 de banco 7 é selecionado e exportado para o MIDI",
+          "status": "PASS"
+        },
+        {
+          "name": "Reprodução SF2 usa samples reais e pode ser parada",
+          "status": "PASS"
+        },
+        {
+          "name": "SF2 inválida preserva o banco anterior",
+          "status": "PASS"
+        },
+        {
+          "name": "VGM no seletor SF2 preserva o banco e a música existentes",
+          "status": "PASS"
+        },
+        {
+          "name": "Remover SF2 restaura síntese simples e controles GM",
+          "status": "PASS"
+        },
+        {
+          "name": "Animações podem ser desativadas",
+          "status": "PASS"
+        },
+        {
+          "name": "Demo SegaPCM converte e exibe trechos e scopes",
+          "status": "PASS"
+        },
+        {
+          "name": "Sem erros JavaScript não tratados durante os fluxos",
+          "status": "PASS"
+        }
+      ]
+    },
+    "i18n": {
+      "environment": "jsdom + simulated Canvas/Web Audio; no real browser",
+      "total": 24,
+      "passed": 24,
+      "results": [
+        {
+          "name": "PT-BR é o padrão e o seletor tem ambos os idiomas",
+          "status": "PASS"
+        },
+        {
+          "name": "English traduz controles, campos, áreas e acessibilidade",
+          "status": "PASS"
+        },
+        {
+          "name": "Ajuda e análise trocam o documento e mantêm links técnicos",
+          "status": "PASS"
+        },
+        {
+          "name": "Músicas inválidas e separação SF2 geram mensagens em inglês",
+          "status": "PASS"
+        },
+        {
+          "name": "Demo em inglês converte em Worker e traduz instrumentos GM",
+          "status": "PASS"
+        },
+        {
+          "name": "Troca de idioma preserva nós, instrumentos, volume, transposição e posição",
+          "status": "PASS"
+        },
+        {
+          "name": "Mudança durante reprodução não para o áudio nem zera o transporte",
+          "status": "PASS"
+        },
+        {
+          "name": "Erros do parser e nomes de arquivo são preservados/traduzidos separadamente",
+          "status": "PASS"
+        },
+        {
+          "name": "Metadados GD3 com marcação permanecem texto original em ambos os idiomas",
+          "status": "PASS"
+        },
+        {
+          "name": "PCM, páginas, opções e notas inferidas são traduzidos",
+          "status": "PASS"
+        },
+        {
+          "name": "Soundfont real mantém nome/presets e seleção quando o idioma muda",
+          "status": "PASS"
+        },
+        {
+          "name": "Diagnóstico baixado usa inglês e identifica a soundfont da prévia",
+          "status": "PASS"
+        },
+        {
+          "name": "Erro SF2 inválida traduz mensagem e preserva a fonte",
+          "status": "PASS"
+        },
+        {
+          "name": "Ativar/desativar todas altera exportação e preserva escolhas",
+          "status": "PASS"
+        },
+        {
+          "name": "Legenda de instrumento segue o motor de prévia",
+          "status": "PASS"
+        },
+        {
+          "name": "Atalho Espaço pausa/retoma e não captura eventos dos campos",
+          "status": "PASS"
+        },
+        {
+          "name": "Catálogos PT/EN têm todas as chaves e 128 instrumentos traduzidos",
+          "status": "PASS"
+        },
+        {
+          "name": "Preferência English é restaurada ao abrir",
+          "status": "PASS"
+        },
+        {
+          "name": "Armazenamento bloqueado mantém a troca funcional",
+          "status": "PASS"
+        },
+        {
+          "name": "HTML em origem file não depende de armazenamento ou servidor",
+          "status": "PASS"
+        },
+        {
+          "name": "Alternar idiomas repetidamente não duplica controles nem perde nós",
+          "status": "PASS"
+        },
+        {
+          "name": "As 128 opções GM exibidas usam os nomes ingleses completos",
+          "status": "PASS"
+        },
+        {
+          "name": "Interface estática inglesa não conserva legendas portuguesas por quebras de linha",
+          "status": "PASS"
+        },
+        {
+          "name": "Não há erros JavaScript não tratados nos fluxos bilíngues",
+          "status": "PASS"
+        }
+      ]
+    },
+    "review": {
+      "environment": "Node and jsdom; simulated Canvas/Web Audio; no real browser",
+      "total": 13,
+      "passed": 13,
+      "results": [
+        {
+          "name": "Osciloscópio reutiliza o mesmo array de desenho e o zera no silêncio",
+          "status": "PASS"
+        },
+        {
+          "name": "Janela do scope valida contagens inválidas sem NaN/divisão por zero",
+          "status": "PASS"
+        },
+        {
+          "name": "Falha em uma camada SF2 posterior limpa vozes já iniciadas",
+          "status": "PASS"
+        },
+        {
+          "name": "Orçamento de camadas SF2 respeita as vagas restantes",
+          "status": "PASS"
+        },
+        {
+          "name": "Notas sobrepostas mantêm a tecla da nota longa depois do fim da curta",
+          "status": "PASS"
+        },
+        {
+          "name": "Navegar pela página de trechos PCM encerra a audição e limpa o monitor",
+          "status": "PASS"
+        },
+        {
+          "name": "Carregamento de soundfont bloqueia início de reprodução até terminar",
+          "status": "PASS"
+        },
+        {
+          "name": "Reutilização do Worker preserva entrada para reconversão e PCM transferido",
+          "status": "PASS"
+        },
+        {
+          "name": "Lote misto converte músicas e mantém visível o aviso dos arquivos rejeitados",
+          "status": "PASS"
+        },
+        {
+          "name": "Prévia com todas as pistas desativadas avisa e não cria transporte vazio",
+          "status": "PASS"
+        },
+        {
+          "name": "Array curto do scope e taxa inválida não leem fora da janela",
+          "status": "PASS"
+        },
+        {
+          "name": "Página libera o Blob do Worker ao ser encerrada",
+          "status": "PASS"
+        },
+        {
+          "name": "Regressões novas não deixam erros JavaScript pendentes",
+          "status": "PASS"
+        }
+      ]
+    }
+  }
+}

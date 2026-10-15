@@ -1,0 +1,19 @@
+{
+  "name": "vgm2mid-megadrive-studio",
+  "version": "3.2.0",
+  "private": true,
+  "scripts": {
+    "build": "python3 scripts/build.py",
+    "test": "node tests/verify.js && node tests/pcm-verify.js && node tests/chips-verify.js && node tests/sf2-verify.js && node tests/scopes-verify.js && node tests/ui-verify.js && node tests/i18n-verify.js && node tests/review-verify.js",
+    "format:check": "prettier --check \"src/**/*.{js,json,html,css}\" \"docs/*.html\" \"tests/**/*.js\"",
+    "package": "python3 scripts/package.py"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "prettier": "3.6.2"
+  },
+  "description": "Offline VGM/GYM to MIDI studio with SF2 preview and PT-BR/English UI",
+  "engines": {
+    "node": ">=22"
+  }
+}
